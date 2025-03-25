@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вопрос-ответ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #question,
+        input,
+        button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (min-width: 768px) { /* Для экранов шире 768 пикселей */
+            #question,
+            input,
+            button {
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Попробуйте ответить на вопрос:</h1>
+<p id="question">У какого животного самые большие глаза относительно тела?</p>
+<input type="text" id="answerInput" placeholder="Ваш ответ..." style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+<button onclick="checkAnswer()" style="padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">Проверить ответ</button>
+<p id="result"></p>
+
+<script>
+    function checkAnswer() {
+        let answer = document.getElementById("answerInput").value.trim().toLowerCase();
+        const correctAnswer = "стрекоза";
+
+        if (answer === correctAnswer) {
+            document.getElementById("result").innerText = "Верно! Одна из спрятаных букв - 'Е'!";
+        } else {
+            document.getElementById("result").innerText = "Подумайте ещё.";
+        }
+    }
+</script>
+
+</body>
+</html>
